@@ -138,6 +138,7 @@
             this.testButton.TabIndex = 3;
             this.testButton.Text = "testButton";
             this.testButton.UseVisualStyleBackColor = true;
+            this.testButton.Click += new System.EventHandler(this.testButton_Click);
             // 
             // dataGridView2
             // 

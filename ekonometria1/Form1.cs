@@ -93,7 +93,7 @@ namespace ekonometria1
                         } 
                         
                         //do tablic macierzy
-                        if (j == 0)
+                        if (j == 0)//wektorY
                              try
                             {
                                 tabY[i] = float.Parse(number);
@@ -102,7 +102,7 @@ namespace ekonometria1
                             {
                                 tabY[i] = 0;
                             }
-                        else
+                        else//macierzX
                             try
                             {
                                 tabX[i, j - 1] = float.Parse(number);
@@ -118,11 +118,121 @@ namespace ekonometria1
                     j = 0;
                 }
             }
+            //
+            korelacjaXY(tabX, tabY, rowsCount);
+            korelacjaXX(tabX, rowsCount);
         }
+        private float korelacjaXY(float[,] tabX, float[] tabY, int rowsCount)
+        {
+            //srednie X i Y
+            float[] sredniaX = new float[rowsCount];
+            float sredniaY = 0;
+
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < rowsCount; j++)
+                {
+                    sredniaX[i] += tabX[j, i];
+                }
+                sredniaX[i] /= rowsCount;
+                Console.WriteLine("srednia" + i + " " + sredniaX[i]);
+            }
+
+            for (int i = 0; i < rowsCount; i++)
+                sredniaY += tabY[i];
+            sredniaY /= rowsCount;
+            Console.WriteLine("sredniaY " + sredniaY);
+
+            //korelacja Rxy
+            float[] Rxy = new float[rowsCount];
+            float[] kowariancja = new float[rowsCount];
+            float[] odchylenieX = new float[rowsCount];
+            float[] odchylenieY = new float[rowsCount];
+             
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < rowsCount; j++)
+                {
+                    kowariancja[i] += (tabX[j, i] * tabY[j] - sredniaX[i] * sredniaY);
+                    odchylenieX[i] += ((tabX[j, i] - sredniaX[i]) * (tabX[j, i] - sredniaX[i]));
+                    odchylenieY[i] += ((tabY[j] - sredniaY) * (tabY[j] - sredniaY));
+                }
+                    
+                kowariancja[i] /= rowsCount;
+                Console.WriteLine("kowariancja" + i + " " + kowariancja[i]);
+                odchylenieX[i] /= rowsCount;
+                odchylenieX[i] = (float)Math.Sqrt(odchylenieX[i]);
+                Console.WriteLine("odchylenieX" + i + " " + odchylenieX[i]);
+                odchylenieY[i] /= rowsCount;
+                odchylenieY[i] = (float)Math.Sqrt(odchylenieY[i]);
+                Console.WriteLine("odchylenieY" + i + " " + odchylenieY[i]);
+                Rxy[i] = kowariancja[i] / (odchylenieX[i] * odchylenieY[i]);
+                
+                Console.WriteLine("rxy" + i + " " + Rxy[i]);
+                dataGridView2.Rows[i].Cells[0].Value = Rxy[i];
+            }
+            return 0;
+        }
+
+        private float korelacjaXX(float[,] tabX, int rowsCount)
+        {
+            float[] sredniaX = new float[rowsCount];
+
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < rowsCount; j++)
+                {
+                    sredniaX[i] += tabX[j, i];
+                }
+                sredniaX[i] /= rowsCount;
+                Console.WriteLine("srednia" + i + " " + sredniaX[i]);
+            }
+            
+            for (int k = 0; k < 3; k++)
+            {
+                //korelacja Rxx
+                float[] Rxx = new float[rowsCount];
+                float[] kowariancja = new float[rowsCount];
+                float[] odchylenieXi = new float[rowsCount];
+                float[] odchylenieXk = new float[rowsCount];
+
+                for (int i = 0; i <= k; i++)
+                {
+                    for (int j = 0; j < rowsCount; j++)
+                    {
+                        kowariancja[i] += (tabX[j, i] * tabX[j, k] - sredniaX[i] * sredniaX[k]);
+                        odchylenieXi[i] += ((tabX[j, i] - sredniaX[i]) * (tabX[j, i] - sredniaX[i]));
+                        odchylenieXk[i] += ((tabX[j, k] - sredniaX[k]) * (tabX[j, k] - sredniaX[k]));
+                    }
+
+                    kowariancja[i] /= rowsCount;
+                    Console.WriteLine("kowariancja" + i + " " + kowariancja[i]);
+                    odchylenieXi[i] /= rowsCount;
+                    odchylenieXi[i] = (float)Math.Sqrt(odchylenieXi[i]);
+                    Console.WriteLine("odchylenieXi" + i + " " + odchylenieXi[i]);
+                    odchylenieXk[i] /= rowsCount;
+                    odchylenieXk[i] = (float)Math.Sqrt(odchylenieXk[i]);
+                    Console.WriteLine("odchylenieXk" + k + " " + odchylenieXk[i]);
+                    Rxx[i] = kowariancja[i] / (odchylenieXi[i] * odchylenieXk[i]);
+
+                    Console.WriteLine("rxx" + i + k + " " + Rxx[i]);
+                    dataGridView3.Rows[k].Cells[i].Value = Rxx[i];
+                }
+            }
+                return 0;
+        }
+
+
+
         private void testMethod()
         {
             
             
+        }
+
+        private void testButton_Click(object sender, EventArgs e)
+        {
+            //korelacja()
         }
     }
 }
