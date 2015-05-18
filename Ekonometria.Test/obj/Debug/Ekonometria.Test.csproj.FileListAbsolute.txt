@@ -1,0 +1,7 @@
+C:\Users\ula\Desktop\Studia\Ekonometria\projektEkonometria\Ekonometria.Test\bin\Debug\Ekonometria.Test.dll
+C:\Users\ula\Desktop\Studia\Ekonometria\projektEkonometria\Ekonometria.Test\bin\Debug\Ekonometria.Test.pdb
+C:\Users\ula\Desktop\Studia\Ekonometria\projektEkonometria\Ekonometria.Test\bin\Debug\MethodOfGraphs.dll
+C:\Users\ula\Desktop\Studia\Ekonometria\projektEkonometria\Ekonometria.Test\bin\Debug\MethodOfGraphs.pdb
+C:\Users\ula\Desktop\Studia\Ekonometria\projektEkonometria\Ekonometria.Test\obj\Debug\Ekonometria.Test.csprojResolveAssemblyReference.cache
+C:\Users\ula\Desktop\Studia\Ekonometria\projektEkonometria\Ekonometria.Test\obj\Debug\Ekonometria.Test.dll
+C:\Users\ula\Desktop\Studia\Ekonometria\projektEkonometria\Ekonometria.Test\obj\Debug\Ekonometria.Test.pdb
