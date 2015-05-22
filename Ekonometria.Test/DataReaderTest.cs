@@ -41,7 +41,7 @@ namespace Ekonometria.Test {
         }
 
         [TestMethod]
-        public void CreateYMatrix() {
+        public void YMatrix() {
             double[] yMatrix = { 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0,
                                    12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0, 21.0 };
             double[] testMatrix = dr.TheCreationOfYMatrix();
@@ -51,7 +51,7 @@ namespace Ekonometria.Test {
         }
 
         [TestMethod]
-        public void LinesXMatrix() {
+        public void XMatrix() {
             double[,] tmp = { 
                              {45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65 },
                              {0.76,0.471567741,1.76,0.465528073,2.76,0.289902437,3.76,0.93968652,

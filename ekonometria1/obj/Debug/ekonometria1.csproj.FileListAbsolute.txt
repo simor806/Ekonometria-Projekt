@@ -10,9 +10,9 @@ C:\Users\Szymon\Documents\Visual Studio 2013\Projects\ekonometria1\ekonometria1\
 C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\ekonometria1\bin\Debug\ekonometria1.exe.config
 C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\ekonometria1\bin\Debug\ekonometria1.exe
 C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\ekonometria1\bin\Debug\ekonometria1.pdb
-C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\ekonometria1\obj\Debug\ekonometria1.csprojResolveAssemblyReference.cache
 C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\ekonometria1\obj\Debug\ekonometria1.Form1.resources
 C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\ekonometria1\obj\Debug\ekonometria1.Properties.Resources.resources
 C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\ekonometria1\obj\Debug\ekonometria1.csproj.GenerateResource.Cache
 C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\ekonometria1\obj\Debug\ekonometria1.exe
 C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\ekonometria1\obj\Debug\ekonometria1.pdb
+C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\ekonometria1\obj\Debug\ekonometria1.csprojResolveAssemblyReference.cache
