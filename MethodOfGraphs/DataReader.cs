@@ -10,8 +10,11 @@ namespace MethodOfGraphs {
         public string fileName = @"C:\Users\ula\Dropbox\projekt-ekonometria\Dane_testowe2.txt";
         public StreamReader sr;
         public int count = 0;
-        public int[] yMatrix;
-        public double[] xMatrix;
+        public double[] yMatrix;
+        public double[,] xMatrix;
+        public string[] seperators = { "\t", " " };
+        public string[] elements;
+        public string source;
 
         public DataReader(string fileName) {
             this.fileName = fileName;
@@ -38,26 +41,34 @@ namespace MethodOfGraphs {
             return count;
         }
 
-        public int[] CreateYMatrix() {
+        public double[] TheCreationOfYMatrix() {
             int length = CountLines();
-            yMatrix = new int[length];
-            for (int i = 0; i < length; ++i)
-                yMatrix[i] = i + 1;
+            yMatrix = new double[length];
+            sr.BaseStream.Seek(0, SeekOrigin.Begin);
+            while (hasNextLine()) {
+                for (int i = 0; i < length; ++i) {
+                    source = ReadLine();
+                    elements = source.Split(seperators, StringSplitOptions.None);
+                    yMatrix[i] = Convert.ToDouble(elements[0]);
+                }
+            }
             return yMatrix;
         }
 
-
-        public double[] LineOfXMatrix() {
+        public double[,] TheCreationOfXMatrix() {
             int length = CountLines();
-            xMatrix = new double[length];
-            string[] tmp = new string[length];
-            string c = ReadLine();
-            tmp = c.Split('\t');
-            for (int i = 0; i < length; ++i) {
-                xMatrix[i] = Convert.ToDouble(tmp[i]);
-            }
-            return xMatrix;
-        }
+            sr.BaseStream.Seek(0, SeekOrigin.Begin);
+            xMatrix = new double[3, length];
 
+            while (hasNextLine()) {
+                   for (int j = 0; j < 21; j++) {
+                       source = ReadLine();
+                       elements = source.Split(seperators, StringSplitOptions.None);
+                       for (int i = 0; i < 3;i++ )
+                           xMatrix[i, j] = Convert.ToDouble(elements[i+1]);
+                   } 
+            }        
+           return xMatrix;
+        }
     }
 }
