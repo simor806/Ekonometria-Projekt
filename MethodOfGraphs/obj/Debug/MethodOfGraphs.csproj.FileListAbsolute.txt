@@ -4,6 +4,6 @@ C:\Users\ula\Desktop\Studia\Ekonometria\projektEkonometria\MethodOfGraphs\obj\De
 C:\Users\ula\Desktop\Studia\Ekonometria\projektEkonometria\MethodOfGraphs\obj\Debug\MethodOfGraphs.pdb
 C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\MethodOfGraphs\bin\Debug\MethodOfGraphs.dll
 C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\MethodOfGraphs\bin\Debug\MethodOfGraphs.pdb
+C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\MethodOfGraphs\obj\Debug\MethodOfGraphs.csproj.ResolveComReference.cache
 C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\MethodOfGraphs\obj\Debug\MethodOfGraphs.dll
 C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\MethodOfGraphs\obj\Debug\MethodOfGraphs.pdb
-C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\MethodOfGraphs\obj\Debug\MethodOfGraphs.csproj.ResolveComReference.cache

@@ -15,4 +15,3 @@ C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\ekonometr
 C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\ekonometria1\obj\Debug\ekonometria1.csproj.GenerateResource.Cache
 C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\ekonometria1\obj\Debug\ekonometria1.exe
 C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\ekonometria1\obj\Debug\ekonometria1.pdb
-C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\ekonometria1\obj\Debug\ekonometria1.csprojResolveAssemblyReference.cache
