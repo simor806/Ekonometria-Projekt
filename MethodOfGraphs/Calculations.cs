@@ -8,6 +8,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 
 
+
 namespace MethodOfGraphs {
     public class Calculations {
         DataReader d = new DataReader(@"C:\Users\ula\Dropbox\projekt-ekonometria\Dane_testowe2.txt");
@@ -77,7 +78,18 @@ namespace MethodOfGraphs {
             var chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             double tAlfa;
             tAlfa = chart.DataManipulator.Statistics.InverseTDistribution(0.05, n-2);
-            
+            double rAlfa = Math.Sqrt((tAlfa * tAlfa)/(n-2+tAlfa*tAlfa));
+            return rAlfa;
+        }
+
+        public double[,] VerificationOfTheHypothesis() {
+            double[,] R = CreationRMatrix();
+            double RAlfa= CriticalValue();
+            for (int i = 0; i < 3; i++)
+                for (int j = 0; j < 4; j++)
+                    if (Math.Abs(R[i, j]) <= RAlfa)
+                        R[i, j] = 0;
+           return R;
         }
     }
 }

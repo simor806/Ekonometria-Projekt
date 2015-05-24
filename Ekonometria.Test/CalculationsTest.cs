@@ -53,7 +53,20 @@ namespace Ekonometria.Test {
         [TestMethod]
         public void CriticalValueOfTheCorrelationCoefficient() {
             double Ralfa=c.CriticalValue();
-            Assert.AreEqual(0.432853514,Ralfa , 0.0000001);
+            Assert.AreEqual(0.432853514,Ralfa , 0.0001);
+        }
+
+        [TestMethod]
+        public void CheckingNewRMatrix() {
+            double[,] Rtest ={
+                                {1,1,0,0.631761642524286},
+                                {0,0,1,-0.541379575882234},
+                                {0.631761642524286, 0.631761642524286,-0.541379575882234,1}
+                             };
+            double[,] NewR = c.VerificationOfTheHypothesis();
+            for (int i = 0; i < 3; i++)
+                for (int j = 0; j < 4; j++)
+                    Assert.AreEqual(Rtest[i, j], NewR[i, j], 0.00001);
         }
     }
 }
