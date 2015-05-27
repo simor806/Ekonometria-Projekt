@@ -6,21 +6,23 @@ using System.Threading.Tasks;
 using Microsoft.Office.Interop.Excel;
 using System.Windows.Forms.DataVisualization.Charting;
 
-
-
-
 namespace MethodOfGraphs {
     public class Calculations {
-        DataReader d = new DataReader(@"C:\Users\ula\Dropbox\projekt-ekonometria\Dane_testowe2.txt");
-        int n = 21;
+        public DataReader d;
+        public double alfa;
+
+        public Calculations(string fileName) {
+            this.d = new DataReader(fileName);
+            //this.d= new DataReader(@"C:\Users\ula\Dropbox\projekt-ekonometria\Dane_testowe2.txt");
+        }
 
         public double[,] W = new double[4, 4];
-        public double[,] R = new double[3, 4];
+        public double[,] R = new double[3, 3];
 
         public double[,] CorrelationMatrix() {
 
-            double[] y = d.TheCreationOfYMatrix();
-            double[,] xMatrix = d.TheCreationOfXMatrix();
+            double[] y = d.CreationOfYMatrix();
+            double[,] xMatrix = d.CreationOfXMatrix();
             int length = d.CountLines();
             double[] x1 = new double[length];
             double[] x2 = new double[length];
@@ -57,36 +59,37 @@ namespace MethodOfGraphs {
 
         public double[] CreationR0Matrix() {
 
-            double[] R0 = new double[4];
+            double[] R0 = new double[3];
             double[,] source = CorrelationMatrix();
             for (int i = 0; i < R0.Length; i++)
-                R0[i] = source[0, i];
+                R0[i] = source[0, i+1];
             return R0;
         }
 
         public double[,] CreationRMatrix() {
             double[,] pom= CorrelationMatrix();
-            for (int j = 0; j < 4; j++) {
-                R[0, j] = pom[1, j];
-                R[1, j] = pom[2, j];
-                R[2, j] = pom[3, j];
+            for (int j = 0; j < 3; j++) {
+                R[0, j] = pom[1, j+1];
+                R[1, j] = pom[2, j+1];
+                R[2, j] = pom[3, j+1];
             }
             return R;
         }
 
-        public double CriticalValue() {
+        public double CriticalValue(double alfa) {
+            int n = d.CountLines();
             var chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             double tAlfa;
-            tAlfa = chart.DataManipulator.Statistics.InverseTDistribution(0.05, n-2);
+            tAlfa = chart.DataManipulator.Statistics.InverseTDistribution(alfa, n-2);
             double rAlfa = Math.Sqrt((tAlfa * tAlfa)/(n-2+tAlfa*tAlfa));
             return rAlfa;
         }
 
-        public double[,] VerificationOfTheHypothesis() {
+        public double[,] VerificationOfTheHypothesis(double alfa) {
             double[,] R = CreationRMatrix();
-            double RAlfa= CriticalValue();
+            double RAlfa= CriticalValue(alfa);
             for (int i = 0; i < 3; i++)
-                for (int j = 0; j < 4; j++)
+                for (int j = 0; j < 3; j++)
                     if (Math.Abs(R[i, j]) <= RAlfa)
                         R[i, j] = 0;
            return R;

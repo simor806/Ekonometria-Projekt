@@ -29,35 +29,42 @@
         private void InitializeComponent()
         {
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.BrowseButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBoxPath = new System.Windows.Forms.TextBox();
+            this.buttonLoadData = new System.Windows.Forms.Button();
+            this.dataGridViewDataFromFile = new System.Windows.Forms.DataGridView();
             this.colY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colX1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colX2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colX3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.testButton = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.buttonCalculate = new System.Windows.Forms.Button();
+            this.dataGridViewR0 = new System.Windows.Forms.DataGridView();
             this.colR0 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCorrelation = new System.Windows.Forms.DataGridView();
             this.colRX1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRX2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRX3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxAlfa = new System.Windows.Forms.TextBox();
+            this.textBoxRalfa = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.colS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colKomb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIndH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIntegrH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonShowGraph = new System.Windows.Forms.Button();
+            this.dataGridViewR = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDataFromFile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewR0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCorrelation)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewR)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -69,40 +76,41 @@
             this.openFileDialog1.RestoreDirectory = true;
             this.openFileDialog1.Title = "Wybierz plik tekstowy";
             // 
-            // textBox1
+            // textBoxPath
             // 
-            this.textBox1.Location = new System.Drawing.Point(152, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(260, 20);
-            this.textBox1.TabIndex = 0;
+            this.textBoxPath.Location = new System.Drawing.Point(85, 12);
+            this.textBoxPath.Name = "textBoxPath";
+            this.textBoxPath.ReadOnly = true;
+            this.textBoxPath.Size = new System.Drawing.Size(330, 20);
+            this.textBoxPath.TabIndex = 0;
             // 
-            // BrowseButton
+            // buttonLoadData
             // 
-            this.BrowseButton.Location = new System.Drawing.Point(12, 12);
-            this.BrowseButton.Name = "BrowseButton";
-            this.BrowseButton.Size = new System.Drawing.Size(134, 24);
-            this.BrowseButton.TabIndex = 1;
-            this.BrowseButton.Text = "Wczytaj dane i oblicz";
-            this.BrowseButton.UseVisualStyleBackColor = true;
-            this.BrowseButton.Click += new System.EventHandler(this.BrowseButton_Click);
+            this.buttonLoadData.Location = new System.Drawing.Point(12, 6);
+            this.buttonLoadData.Name = "buttonLoadData";
+            this.buttonLoadData.Size = new System.Drawing.Size(67, 36);
+            this.buttonLoadData.TabIndex = 1;
+            this.buttonLoadData.Text = "Wczytaj dane";
+            this.buttonLoadData.UseVisualStyleBackColor = true;
+            this.buttonLoadData.Click += new System.EventHandler(this.BrowseButton_Click);
             // 
-            // dataGridView1
+            // dataGridViewDataFromFile
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewDataFromFile.AllowUserToAddRows = false;
+            this.dataGridViewDataFromFile.AllowUserToDeleteRows = false;
+            this.dataGridViewDataFromFile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDataFromFile.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colY,
             this.colX1,
             this.colX2,
             this.colX3});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 60);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.Size = new System.Drawing.Size(403, 493);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridViewDataFromFile.Location = new System.Drawing.Point(12, 51);
+            this.dataGridViewDataFromFile.Name = "dataGridViewDataFromFile";
+            this.dataGridViewDataFromFile.ReadOnly = true;
+            this.dataGridViewDataFromFile.RowHeadersVisible = false;
+            this.dataGridViewDataFromFile.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridViewDataFromFile.Size = new System.Drawing.Size(403, 421);
+            this.dataGridViewDataFromFile.TabIndex = 2;
             // 
             // colY
             // 
@@ -130,30 +138,30 @@
             this.colX3.Name = "colX3";
             this.colX3.ReadOnly = true;
             // 
-            // testButton
+            // buttonCalculate
             // 
-            this.testButton.Location = new System.Drawing.Point(929, 14);
-            this.testButton.Name = "testButton";
-            this.testButton.Size = new System.Drawing.Size(75, 23);
-            this.testButton.TabIndex = 3;
-            this.testButton.Text = "testButton";
-            this.testButton.UseVisualStyleBackColor = true;
-            this.testButton.Click += new System.EventHandler(this.testButton_Click);
+            this.buttonCalculate.Location = new System.Drawing.Point(249, 43);
+            this.buttonCalculate.Name = "buttonCalculate";
+            this.buttonCalculate.Size = new System.Drawing.Size(75, 23);
+            this.buttonCalculate.TabIndex = 3;
+            this.buttonCalculate.Text = "Oblicz";
+            this.buttonCalculate.UseVisualStyleBackColor = true;
+            this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
             // 
-            // dataGridView2
+            // dataGridViewR0
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewR0.AllowUserToAddRows = false;
+            this.dataGridViewR0.AllowUserToDeleteRows = false;
+            this.dataGridViewR0.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewR0.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colR0});
-            this.dataGridView2.Location = new System.Drawing.Point(449, 12);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersWidth = 50;
-            this.dataGridView2.Size = new System.Drawing.Size(152, 90);
-            this.dataGridView2.TabIndex = 4;
+            this.dataGridViewR0.Location = new System.Drawing.Point(6, 32);
+            this.dataGridViewR0.Margin = new System.Windows.Forms.Padding(0);
+            this.dataGridViewR0.Name = "dataGridViewR0";
+            this.dataGridViewR0.ReadOnly = true;
+            this.dataGridViewR0.RowHeadersWidth = 50;
+            this.dataGridViewR0.Size = new System.Drawing.Size(153, 95);
+            this.dataGridViewR0.TabIndex = 4;
             // 
             // colR0
             // 
@@ -161,23 +169,23 @@
             this.colR0.Name = "colR0";
             this.colR0.ReadOnly = true;
             // 
-            // dataGridView3
+            // dataGridViewCorrelation
             // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AllowUserToResizeRows = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCorrelation.AllowUserToAddRows = false;
+            this.dataGridViewCorrelation.AllowUserToDeleteRows = false;
+            this.dataGridViewCorrelation.AllowUserToResizeRows = false;
+            this.dataGridViewCorrelation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCorrelation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colRX1,
             this.colRX2,
             this.colRX3});
-            this.dataGridView3.Location = new System.Drawing.Point(615, 12);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(0);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.Size = new System.Drawing.Size(303, 90);
-            this.dataGridView3.TabIndex = 5;
+            this.dataGridViewCorrelation.Location = new System.Drawing.Point(170, 32);
+            this.dataGridViewCorrelation.Margin = new System.Windows.Forms.Padding(0);
+            this.dataGridViewCorrelation.Name = "dataGridViewCorrelation";
+            this.dataGridViewCorrelation.ReadOnly = true;
+            this.dataGridViewCorrelation.RowHeadersVisible = false;
+            this.dataGridViewCorrelation.Size = new System.Drawing.Size(304, 95);
+            this.dataGridViewCorrelation.TabIndex = 5;
             // 
             // colRX1
             // 
@@ -200,115 +208,171 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(565, 133);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(6, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 13);
+            this.label1.Size = new System.Drawing.Size(113, 15);
             this.label1.TabIndex = 6;
             this.label1.Text = "Poziom istotności α";
             // 
-            // textBox2
+            // textBoxAlfa
             // 
-            this.textBox2.Location = new System.Drawing.Point(669, 130);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 7;
+            this.textBoxAlfa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxAlfa.Location = new System.Drawing.Point(125, 43);
+            this.textBoxAlfa.Name = "textBoxAlfa";
+            this.textBoxAlfa.Size = new System.Drawing.Size(100, 21);
+            this.textBoxAlfa.TabIndex = 7;
+            this.textBoxAlfa.Text = "0,05";
             // 
-            // label2
+            // textBoxRalfa
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(555, 166);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Statystyka t-Studenta";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(669, 163);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 9;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(669, 189);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 10;
+            this.textBoxRalfa.Location = new System.Drawing.Point(220, 35);
+            this.textBoxRalfa.Name = "textBoxRalfa";
+            this.textBoxRalfa.ReadOnly = true;
+            this.textBoxRalfa.Size = new System.Drawing.Size(100, 20);
+            this.textBoxRalfa.TabIndex = 10;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(452, 196);
+            this.label3.Location = new System.Drawing.Point(3, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(211, 13);
             this.label3.TabIndex = 11;
             this.label3.Text = "Wartość krytyczna współczynnika korelacji";
             // 
-            // dataGridView4
+            // label4
             // 
-            this.dataGridView4.AllowUserToAddRows = false;
-            this.dataGridView4.AllowUserToDeleteRows = false;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colS,
-            this.colKomb,
-            this.colIndH,
-            this.colIntegrH});
-            this.dataGridView4.Location = new System.Drawing.Point(449, 239);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.Size = new System.Drawing.Size(469, 150);
-            this.dataGridView4.TabIndex = 12;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(3, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(156, 15);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Współczynniki korelacji";
             // 
-            // colS
+            // panel2
             // 
-            this.colS.HeaderText = "Nr kombinacji S";
-            this.colS.Name = "colS";
-            this.colS.ReadOnly = true;
+            this.panel2.Controls.Add(this.buttonShowGraph);
+            this.panel2.Controls.Add(this.dataGridViewR);
+            this.panel2.Controls.Add(this.textBoxRalfa);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Location = new System.Drawing.Point(418, 257);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(474, 215);
+            this.panel2.TabIndex = 15;
             // 
-            // colKomb
+            // buttonShowGraph
             // 
-            this.colKomb.HeaderText = "Kombinacja";
-            this.colKomb.Name = "colKomb";
-            this.colKomb.ReadOnly = true;
+            this.buttonShowGraph.Location = new System.Drawing.Point(9, 172);
+            this.buttonShowGraph.Name = "buttonShowGraph";
+            this.buttonShowGraph.Size = new System.Drawing.Size(112, 23);
+            this.buttonShowGraph.TabIndex = 17;
+            this.buttonShowGraph.Text = "Wyświetl graf";
+            this.buttonShowGraph.UseVisualStyleBackColor = true;
+            this.buttonShowGraph.Click += new System.EventHandler(this.buttonShowGraph_Click);
             // 
-            // colIndH
+            // dataGridViewR
             // 
-            this.colIndH.HeaderText = "Indywidualna pojemność nośników informacji h";
-            this.colIndH.Name = "colIndH";
-            this.colIndH.ReadOnly = true;
+            this.dataGridViewR.AllowUserToAddRows = false;
+            this.dataGridViewR.AllowUserToDeleteRows = false;
+            this.dataGridViewR.AllowUserToResizeRows = false;
+            this.dataGridViewR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewR.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.dataGridViewR.Location = new System.Drawing.Point(9, 70);
+            this.dataGridViewR.Margin = new System.Windows.Forms.Padding(0);
+            this.dataGridViewR.Name = "dataGridViewR";
+            this.dataGridViewR.ReadOnly = true;
+            this.dataGridViewR.RowHeadersVisible = false;
+            this.dataGridViewR.Size = new System.Drawing.Size(303, 90);
+            this.dataGridViewR.TabIndex = 16;
             // 
-            // colIntegrH
+            // dataGridViewTextBoxColumn1
             // 
-            this.colIntegrH.HeaderText = "Integralna pojemność nośników informacji H";
-            this.colIntegrH.Name = "colIntegrH";
-            this.colIntegrH.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.HeaderText = "X1";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "X2";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "X3";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(7, 7);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(452, 17);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Weryfikacja hipotezy o nieistotności współczynników korelacji";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.dataGridViewR0);
+            this.panel1.Controls.Add(this.dataGridViewCorrelation);
+            this.panel1.Location = new System.Drawing.Point(418, 90);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(477, 159);
+            this.panel1.TabIndex = 16;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.textBoxAlfa);
+            this.panel3.Controls.Add(this.buttonCalculate);
+            this.panel3.Location = new System.Drawing.Point(418, 8);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(473, 76);
+            this.panel3.TabIndex = 17;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(6, 8);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(297, 17);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Dane potrzebne do wykonania obliczeń:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 562);
-            this.Controls.Add(this.dataGridView4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView3);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.testButton);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.BrowseButton);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(900, 473);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.dataGridViewDataFromFile);
+            this.Controls.Add(this.buttonLoadData);
+            this.Controls.Add(this.textBoxPath);
             this.Name = "Form1";
             this.Text = "Ekonometria - projekt";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDataFromFile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewR0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCorrelation)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewR)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,13 +381,13 @@
         #endregion
 
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button BrowseButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button testButton;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.TextBox textBoxPath;
+        private System.Windows.Forms.Button buttonLoadData;
+        private System.Windows.Forms.DataGridView dataGridViewDataFromFile;
+        private System.Windows.Forms.Button buttonCalculate;
+        private System.Windows.Forms.DataGridView dataGridViewR0;
         private System.Windows.Forms.DataGridViewTextBoxColumn colR0;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridViewCorrelation;
         private System.Windows.Forms.DataGridViewTextBoxColumn colY;
         private System.Windows.Forms.DataGridViewTextBoxColumn colX1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colX2;
@@ -332,16 +396,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colRX2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRX3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxAlfa;
+        private System.Windows.Forms.TextBox textBoxRalfa;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colKomb;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIndH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIntegrH;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button buttonShowGraph;
+        private System.Windows.Forms.DataGridView dataGridViewR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label6;
 
         //klasy z Excela
         //private static Excel.Workbook MyBook = null;

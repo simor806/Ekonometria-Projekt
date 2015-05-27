@@ -7,7 +7,8 @@ using System.IO;
 
 namespace MethodOfGraphs {
     public class DataReader : IDisposable {
-        public string fileName = @"C:\Users\ula\Dropbox\projekt-ekonometria\Dane_testowe2.txt";
+        public string fileName;
+      // public string fileName = @"C:\Users\ula\Dropbox\projekt-ekonometria\Dane_testowe2.txt";
         public StreamReader sr;
         public int count = 0;
         public double[] yMatrix;
@@ -15,9 +16,11 @@ namespace MethodOfGraphs {
         public string[] seperators = { "\t", " " };
         public string[] elements;
         public string source;
+        public double alfa;
 
         public DataReader(string fileName) {
             this.fileName = fileName;
+            //sr = File.OpenText(@"C:\Users\ula\Dropbox\projekt-ekonometria\Dane_testowe2.txt");
             sr = File.OpenText(fileName);
         }
 
@@ -41,7 +44,7 @@ namespace MethodOfGraphs {
             return count;
         }
 
-        public double[] TheCreationOfYMatrix() {
+        public double[] CreationOfYMatrix() {
             int length = CountLines();
             yMatrix = new double[length];
             sr.BaseStream.Seek(0, SeekOrigin.Begin);
@@ -55,13 +58,13 @@ namespace MethodOfGraphs {
             return yMatrix;
         }
 
-        public double[,] TheCreationOfXMatrix() {
+        public double[,] CreationOfXMatrix() {
             int length = CountLines();
             sr.BaseStream.Seek(0, SeekOrigin.Begin);
             xMatrix = new double[3, length];
 
             while (hasNextLine()) {
-                   for (int j = 0; j < 21; j++) {
+                   for (int j = 0; j < length; j++) {
                        source = ReadLine();
                        elements = source.Split(seperators, StringSplitOptions.None);
                        for (int i = 0; i < 3;i++ )
@@ -69,6 +72,45 @@ namespace MethodOfGraphs {
                    } 
             }        
            return xMatrix;
+        }
+
+        public string[,] UploadingDGVDataFromFile() {
+            int length = CountLines();
+            sr.BaseStream.Seek(0, SeekOrigin.Begin);
+            string[,] data = new string[4, length];
+            while (hasNextLine()) {
+                for (int j = 0; j < length; j++) {
+                    source = ReadLine();
+                    elements = source.Split(seperators, StringSplitOptions.None);
+                    for (int i = 0; i < 4; i++)
+                        data[i, j] = elements[i];
+                }
+            }
+            return data;
+        }
+
+        public double[] UploadingDGVR0() {
+            Calculations cal = new Calculations(fileName);
+            double[] R0=cal.CreationR0Matrix();
+            return R0;
+        }
+
+        public double[,] UploadingDGVCorrelation() {
+            Calculations cal = new Calculations(fileName);
+            double[,] R = cal.CreationRMatrix();
+            return R;
+        }
+
+        public double[,] UploadingDGVR(double alfa) {
+            Calculations cal = new Calculations(fileName);
+            double[,] Ralfa = cal.VerificationOfTheHypothesis(alfa);
+            return Ralfa;
+        }
+
+        public string UploadingCalculationValue(double alfa) {
+            Calculations cal = new Calculations(fileName);
+            string w = Convert.ToString(cal.CriticalValue(alfa));
+            return w;
         }
     }
 }

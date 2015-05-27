@@ -32,6 +32,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.GLEE">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Research\GLEE\bin\Microsoft.GLEE.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.GLEE.Drawing">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Research\GLEE\bin\Microsoft.GLEE.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.GLEE.GraphViewerGDI">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Research\GLEE\bin\Microsoft.GLEE.GraphViewerGDI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,6 +59,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GraphicalRepresentation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -76,6 +86,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MethodOfGraphs\MethodOfGraphs.csproj">
+      <Project>{6fabba6a-7919-4f9d-9fc8-230f76526acf}</Project>
+      <Name>MethodOfGraphs</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

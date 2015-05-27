@@ -20,6 +20,7 @@ namespace Ekonometria.Test {
         public void ReadOneLine() {
             Assert.AreEqual("1	45	0,76	0,036402626", dr.ReadLine());
         }
+
         [TestMethod]
         public void ReadSomeLines() {
             Assert.AreEqual("1	45	0,76	0,036402626", dr.ReadLine());
@@ -44,7 +45,7 @@ namespace Ekonometria.Test {
         public void YMatrix() {
             double[] yMatrix = { 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0,
                                    12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0, 21.0 };
-            double[] testMatrix = dr.TheCreationOfYMatrix();
+            double[] testMatrix = dr.CreationOfYMatrix();
             for (int i = 0; i < 21; ++i) {
                 Assert.AreEqual(yMatrix[i], testMatrix[i]);
             }
@@ -61,7 +62,7 @@ namespace Ekonometria.Test {
                               3.088,0.587729753,4.088,0.476125115,5.088,0.308421578,6.088,0.791577457,
                               7.088,0.399298348,8.088,0.014612991,9.088,10.088}
                             };
-            double[,] testXMatrix = dr.TheCreationOfXMatrix();
+            double[,] testXMatrix = dr.CreationOfXMatrix();
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 21; j++) {
                     Assert.AreEqual(tmp[i, j], testXMatrix[i, j]);
