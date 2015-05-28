@@ -8,7 +8,6 @@ using System.IO;
 namespace MethodOfGraphs {
     public class DataReader : IDisposable {
         public string fileName;
-      // public string fileName = @"C:\Users\ula\Dropbox\projekt-ekonometria\Dane_testowe2.txt";
         public StreamReader sr;
         public int count = 0;
         public double[] yMatrix;
@@ -20,7 +19,6 @@ namespace MethodOfGraphs {
 
         public DataReader(string fileName) {
             this.fileName = fileName;
-            //sr = File.OpenText(@"C:\Users\ula\Dropbox\projekt-ekonometria\Dane_testowe2.txt");
             sr = File.OpenText(fileName);
         }
 
@@ -58,7 +56,7 @@ namespace MethodOfGraphs {
             return yMatrix;
         }
 
-        public double[,] CreationOfXMatrix() {
+        public double[,] CreationOfXMatrixForCorrelationBetweenX1X2X3() {
             int length = CountLines();
             sr.BaseStream.Seek(0, SeekOrigin.Begin);
             xMatrix = new double[3, length];
@@ -112,5 +110,32 @@ namespace MethodOfGraphs {
             string w = Convert.ToString(cal.CriticalValue(alfa));
             return w;
         }
+
+        public double[,] CreationXMatrix() {
+            double[,] pom = CreationOfXMatrixForCorrelationBetweenX1X2X3();
+            int len= CountLines();
+            double[,] X = new double[4, len];
+            int p=0;
+            int m;
+
+            for (int i = 0; i < 4; i++) 
+                for (int j = 0; j < len; j++) 
+                    if (i == 0)
+                        X[i, j] = 1;
+                    else {
+                        if (i != 0) {
+                            m = i - 1;
+                            X[i, j] = pom[m, j];
+                        }
+                        else {
+                            p = j - 1;
+                            X[i, j] = pom[i, p];
+                        }
+                    }
+            
+            return X;
+       }
+
     }
 }
+

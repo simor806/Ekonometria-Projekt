@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Office.Interop.Excel;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Windows.Media;
+
 
 namespace MethodOfGraphs {
     public class Calculations {
@@ -22,7 +24,7 @@ namespace MethodOfGraphs {
         public double[,] CorrelationMatrix() {
 
             double[] y = d.CreationOfYMatrix();
-            double[,] xMatrix = d.CreationOfXMatrix();
+            double[,] xMatrix = d.CreationOfXMatrixForCorrelationBetweenX1X2X3();
             int length = d.CountLines();
             double[] x1 = new double[length];
             double[] x2 = new double[length];
@@ -93,6 +95,29 @@ namespace MethodOfGraphs {
                     if (Math.Abs(R[i, j]) <= RAlfa)
                         R[i, j] = 0;
            return R;
+        }
+
+        public double[,] TransponationXMatrix() {
+            int len = d.CountLines();
+            double[,] pom = d.CreationXMatrix();
+            double[,] XT = Transponation(4, len, pom);
+            return XT;
+        }
+
+        public double[,] Transponation(int r, int c, double[,] what) {
+            double[,] pom = what;
+            double [,] T= new double[c,r];
+            for (int i = 0; i < c; i++)
+                for (int j = 0; j < r; j++) 
+                    T[i, j] = pom[j, i];
+
+            return T;
+        }
+
+        public double[,] MultiplayMatrix(double[,] A, double[,] B) {
+            double[,] AB = new double[3, 3];
+            return AB;
+
         }
     }
 }
