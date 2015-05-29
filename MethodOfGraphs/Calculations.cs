@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Office.Interop.Excel;
 using System.Windows.Forms.DataVisualization.Charting;
-using System.Windows.Media;
 
 
 namespace MethodOfGraphs {
@@ -97,27 +96,6 @@ namespace MethodOfGraphs {
            return R;
         }
 
-        public double[,] TransponationXMatrix() {
-            int len = d.CountLines();
-            double[,] pom = d.CreationXMatrix();
-            double[,] XT = Transponation(4, len, pom);
-            return XT;
-        }
 
-        public double[,] Transponation(int r, int c, double[,] what) {
-            double[,] pom = what;
-            double [,] T= new double[c,r];
-            for (int i = 0; i < c; i++)
-                for (int j = 0; j < r; j++) 
-                    T[i, j] = pom[j, i];
-
-            return T;
-        }
-
-        public double[,] MultiplayMatrix(double[,] A, double[,] B) {
-            double[,] AB = new double[3, 3];
-            return AB;
-
-        }
     }
 }
