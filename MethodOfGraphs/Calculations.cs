@@ -11,10 +11,11 @@ namespace MethodOfGraphs {
     public class Calculations {
         public DataReader d;
         public double alfa;
+        private MatrixOperations m;
 
         public Calculations(string fileName) {
             this.d = new DataReader(fileName);
-            //this.d= new DataReader(@"C:\Users\ula\Dropbox\projekt-ekonometria\Dane_testowe2.txt");
+            this.m = new MatrixOperations();
         }
 
         public double[,] W = new double[4, 4];
@@ -96,6 +97,71 @@ namespace MethodOfGraphs {
            return R;
         }
 
+        public double[] CreateAMatrix(double[,] X, double[] Y) {
+            var XT = m.Transponation(X);
+            var XTX = m.MulMatrix(X, XT);
+            var XTXOd = m.MatrixInversation(XTX);
+            var XTY = m.MulMatrix(XT,Y);
+            double[] a = m.MulMatrix(XTXOd, XTY);
+            return a; 
+        }
 
+        public double DetermRstar() {
+            double Rstar = m.MatrixDeterm(CorrelationMatrix());
+            return Rstar;
+        }
+
+        public double DetermRMatrix() {
+            double dR = m.MatrixDeterm(CreationRMatrix());
+            return dR;
+        }
+
+        public double[] TheoreticalValue() {
+            int len= d.CountLines();
+            double[] tY = new double[len];
+            double[,] X= d.CreationXMatrix();
+            double[] a = CreateAMatrix(X,d.CreationOfYMatrix());
+            for (int i = 0; i < len; i++) 
+                tY[i] = a[0] + a[1] * X[1, i] + a[2] * X[2, i] + a[3] * X[3, i];
+            return tY;
+        }
+
+        public double[] CreationEMatrix() {
+            double[] yThe = TheoreticalValue();
+            double[] y = d.CreationOfYMatrix();
+            double[] e = new double[y.Length];
+            int len= y.Length;
+            for (int i = 0; i < len; i++)
+                e[i] = y[i] - yThe[i];
+            return e;
+        }
+
+        public double CalcStandardDeviation2(int n) {
+            int k = 4;
+            double[] e = CreationEMatrix();
+            double [,] eT= new double[1,e.Length];
+            double S2;
+            for (int i = 0; i < e.Length; i++)
+                eT[0, i] = e[i];
+            double[] pom = m.MulMatrix(eT, e);
+            S2 = (pom[0]) / (n - k);
+            return S2;
+        }
+
+        public double[] CorvarianceMatrix(int n) {
+            double S2 = CalcStandardDeviation2(n);
+            double[,] X = d.CreationXMatrix();
+            double[,] XT = m.Transponation(X);
+            double[,] XTX = m.MulMatrix(XT, X);
+            double[,] D = new double[4, 4];
+            double [] Dre= new double[4];
+            XTX = m.MatrixInversation(XTX);
+            for(int i = 0; i < 4; i++)
+                for (int j = 0; j < 4; j++) 
+                    D[i, j] = S2 * XTX[i, j];
+            for (int i = 0, j = 0; i < 4; i++, j++)
+                Dre[i] = D[i, j];
+                return Dre; 
+        }
     }
 }

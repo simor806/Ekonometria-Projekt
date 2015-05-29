@@ -30,7 +30,6 @@ namespace MethodOfGraphs {
             int row = A.GetLength(0);
             int col = B.GetLength(1);
             double[,] AB = new double[row, col];
-
             var c = eA.WorksheetFunction.MMult(A, B);
             for (int i = 0, m = 1; i < col & m < col + 1; i++, m++)
                 for (int j = 0, n = 1; j < row & n < row + 1; j++, n++)
@@ -74,6 +73,7 @@ namespace MethodOfGraphs {
             return re;
         }
 
+
         public double[,] ScalMul(double[,] a, double p) {
             int m = a.GetLength(0);
             int n = a.GetLength(1);
@@ -82,6 +82,19 @@ namespace MethodOfGraphs {
                 for (int j = 0; j < n; j++)
                     re[i, j] = a[i, j]*p;
             return re;
+        }
+
+        public double[] MulMatrix(double[,] a, double[] b) {
+            int col = a.GetLength(1);
+            int row = a.GetLength(0);
+            double[] ab = new double[col];
+
+            for (int i = 0; i < col; i++) 
+                for (int j = 0; j < row; j++) 
+                    ab[i] += b[j] * a[j, i];
+                
+                return ab;
+
         }
     }
 }

@@ -114,6 +114,14 @@ namespace ekonometria1
 
         private void VisualisationCalculation(string fileName, double alfa) {
             textBoxRalfa.Text = dr.UploadingCalculationValue(alfa);
+            label11.Text = Equation(fileName);
+        }
+
+        private string Equation(string fileName) {
+            Calculations c = new Calculations(fileName);
+            double [] a=c.CreateAMatrix(dr.CreationXMatrix(), dr.CreationOfYMatrix());
+            string equ = "y="+a[0]+"+"+a[1]+"x1+"+a[2]+"x2+"+a[3]+"x3";
+            return equ;
         }
     }
 }

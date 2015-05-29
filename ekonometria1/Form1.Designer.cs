@@ -58,6 +58,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.D0 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.D1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.D2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.D3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDataFromFile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewR0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCorrelation)).BeginInit();
@@ -65,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewR)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -140,7 +150,7 @@
             // 
             // buttonCalculate
             // 
-            this.buttonCalculate.Location = new System.Drawing.Point(249, 43);
+            this.buttonCalculate.Location = new System.Drawing.Point(234, 40);
             this.buttonCalculate.Name = "buttonCalculate";
             this.buttonCalculate.Size = new System.Drawing.Size(75, 23);
             this.buttonCalculate.TabIndex = 3;
@@ -226,7 +236,7 @@
             // 
             // textBoxRalfa
             // 
-            this.textBoxRalfa.Location = new System.Drawing.Point(220, 35);
+            this.textBoxRalfa.Location = new System.Drawing.Point(220, 11);
             this.textBoxRalfa.Name = "textBoxRalfa";
             this.textBoxRalfa.ReadOnly = true;
             this.textBoxRalfa.Size = new System.Drawing.Size(100, 20);
@@ -235,7 +245,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 38);
+            this.label3.Location = new System.Drawing.Point(3, 11);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(211, 13);
             this.label3.TabIndex = 11;
@@ -253,19 +263,24 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.buttonShowGraph);
             this.panel2.Controls.Add(this.dataGridViewR);
             this.panel2.Controls.Add(this.textBoxRalfa);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(418, 257);
+            this.panel2.Location = new System.Drawing.Point(418, 226);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(474, 215);
+            this.panel2.Size = new System.Drawing.Size(474, 246);
             this.panel2.TabIndex = 15;
             // 
             // buttonShowGraph
             // 
-            this.buttonShowGraph.Location = new System.Drawing.Point(9, 172);
+            this.buttonShowGraph.Location = new System.Drawing.Point(306, 212);
             this.buttonShowGraph.Name = "buttonShowGraph";
             this.buttonShowGraph.Size = new System.Drawing.Size(112, 23);
             this.buttonShowGraph.TabIndex = 17;
@@ -283,7 +298,7 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
-            this.dataGridViewR.Location = new System.Drawing.Point(9, 70);
+            this.dataGridViewR.Location = new System.Drawing.Point(0, 156);
             this.dataGridViewR.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridViewR.Name = "dataGridViewR";
             this.dataGridViewR.ReadOnly = true;
@@ -313,7 +328,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(7, 7);
+            this.label5.Location = new System.Drawing.Point(-3, 139);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(452, 17);
             this.label5.TabIndex = 0;
@@ -324,9 +339,9 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.dataGridViewR0);
             this.panel1.Controls.Add(this.dataGridViewCorrelation);
-            this.panel1.Location = new System.Drawing.Point(418, 90);
+            this.panel1.Location = new System.Drawing.Point(418, 81);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(477, 159);
+            this.panel1.Size = new System.Drawing.Size(477, 139);
             this.panel1.TabIndex = 16;
             // 
             // panel3
@@ -337,7 +352,7 @@
             this.panel3.Controls.Add(this.buttonCalculate);
             this.panel3.Location = new System.Drawing.Point(418, 8);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(473, 76);
+            this.panel3.Size = new System.Drawing.Size(473, 67);
             this.panel3.TabIndex = 17;
             // 
             // label6
@@ -349,6 +364,74 @@
             this.label6.Size = new System.Drawing.Size(297, 17);
             this.label6.TabIndex = 8;
             this.label6.Text = "Dane potrzebne do wykonania obliczeń:";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.D0,
+            this.D1,
+            this.D2,
+            this.D3});
+            this.dataGridView1.Location = new System.Drawing.Point(0, 94);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(443, 42);
+            this.dataGridView1.TabIndex = 18;
+            // 
+            // D0
+            // 
+            this.D0.HeaderText = "D(a0)";
+            this.D0.Name = "D0";
+            // 
+            // D1
+            // 
+            this.D1.HeaderText = "D(a1)";
+            this.D1.Name = "D1";
+            // 
+            // D2
+            // 
+            this.D2.HeaderText = "D(a2)";
+            this.D2.Name = "D2";
+            // 
+            // D3
+            // 
+            this.D3.HeaderText = "D(a3)";
+            this.D3.Name = "D3";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 13);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Równanie modelu:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 42);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(180, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Przeciętny błąd szacunku parametru";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(189, 42);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "label10";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(95, 66);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(0, 13);
+            this.label11.TabIndex = 24;
             // 
             // Form1
             // 
@@ -373,6 +456,7 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -410,6 +494,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn D0;
+        private System.Windows.Forms.DataGridViewTextBoxColumn D1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn D2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn D3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
 
         //klasy z Excela
         //private static Excel.Workbook MyBook = null;
