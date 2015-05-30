@@ -106,10 +106,6 @@ namespace MethodOfGraphs {
             return a; 
         }
 
-        public double DetermRstar() {
-            double Rstar = m.MatrixDeterm(CorrelationMatrix());
-            return Rstar;
-        }
 
         public double DetermRMatrix() {
             double dR = m.MatrixDeterm(CreationRMatrix());
@@ -137,14 +133,12 @@ namespace MethodOfGraphs {
         }
 
         public double CalcStandardDeviation2(int n) {
-            int k = 4;
             double[] e = CreationEMatrix();
-            double [,] eT= new double[1,e.Length];
+            double sumee2=0;
+            for (int i = 0; i < n; i++)
+                sumee2 += e[i] * e[i];
             double S2;
-            for (int i = 0; i < e.Length; i++)
-                eT[0, i] = e[i];
-            double[] pom = m.MulMatrix(eT, e);
-            S2 = (pom[0]) / (n - k);
+            S2 = sumee2 / (n - 4);
             return S2;
         }
 
@@ -152,7 +146,7 @@ namespace MethodOfGraphs {
             double S2 = CalcStandardDeviation2(n);
             double[,] X = d.CreationXMatrix();
             double[,] XT = m.Transponation(X);
-            double[,] XTX = m.MulMatrix(XT, X);
+            double[,] XTX = m.MulMatrix(X, XT);
             double[,] D = new double[4, 4];
             double [] Dre= new double[4];
             XTX = m.MatrixInversation(XTX);
@@ -160,7 +154,7 @@ namespace MethodOfGraphs {
                 for (int j = 0; j < 4; j++) 
                     D[i, j] = S2 * XTX[i, j];
             for (int i = 0, j = 0; i < 4; i++, j++)
-                Dre[i] = D[i, j];
+                Dre[i] = Math.Sqrt(D[i, j]);
                 return Dre; 
         }
     }

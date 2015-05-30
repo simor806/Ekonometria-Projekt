@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using MethodOfGraphs;
 using System.Globalization;
+using System.Diagnostics;
 
 namespace ekonometria1
 {
@@ -17,7 +18,8 @@ namespace ekonometria1
     {
         public string fileName;
         public DataReader dr;
-        double alfa;
+        public double alfa;
+        public Stopwatch sw = new Stopwatch();
 
         public Form1()
         {
@@ -78,10 +80,12 @@ namespace ekonometria1
 
         private void buttonCalculate_Click(object sender, EventArgs e) {
             alfa = Convert.ToDouble(textBoxAlfa.Text);
+            int n = dr.CountLines();
             VisualisationR0(fileName);
             VisualisationR(fileName);
+            VisualisationCalculation(fileName, alfa,n);
+            VisualisationDa(fileName, n);
             VisualisationHypothesis(fileName, alfa);
-            VisualisationCalculation(fileName, alfa);
         }
 
         private void VisualisationR0(string fileName) {
@@ -89,18 +93,18 @@ namespace ekonometria1
             R0 = dr.UploadingDGVR0();
             dataGridViewR0.RowCount = 3;
             dataGridViewR0.ColumnCount = 1;
-            for (int i = 0; i < 3; i++)
-                dataGridViewR0.Rows[i].Cells[0].Value = R0[i];
+
+           for (int i = 0; i < 3; i++)
+                dataGridViewR0.Rows[i].Cells[0].Value = R0[i].ToString("000.###e+00");
         }
 
         private void VisualisationR(string fileName) {
             double[,]R=  dr.UploadingDGVCorrelation();
             dataGridViewCorrelation.RowCount = 3;
             dataGridViewCorrelation.ColumnCount = 3;
-
             for (int j = 0; j < 3; j++)
                 for (int i = 0; i < 3; i++)
-                    dataGridViewCorrelation.Rows[j].Cells[i].Value = R[i, j];      
+                    dataGridViewCorrelation.Rows[j].Cells[i].Value = R[i, j].ToString("0.###e+00");
         }
 
         private void VisualisationHypothesis(string fileName, double alfa) {
@@ -112,16 +116,21 @@ namespace ekonometria1
                     dataGridViewR.Rows[j].Cells[i].Value = Ralfa[i, j];      
         }
 
-        private void VisualisationCalculation(string fileName, double alfa) {
-            textBoxRalfa.Text = dr.UploadingCalculationValue(alfa);
-            label11.Text = Equation(fileName);
+        private void VisualisationCalculation(string fileName, double alfa, int n) {
+            string[] res = dr.UploadingCalculationValue(alfa, n);
+            textBoxRalfa.Text = res[0];
+            label10.Text = res[1];
+            label11.Text = res[2];
         }
 
-        private string Equation(string fileName) {
+        private void VisualisationDa(string fileName, int n) {
             Calculations c = new Calculations(fileName);
-            double [] a=c.CreateAMatrix(dr.CreationXMatrix(), dr.CreationOfYMatrix());
-            string equ = "y="+a[0]+"+"+a[1]+"x1+"+a[2]+"x2+"+a[3]+"x3";
-            return equ;
+            double[] D = c.CorvarianceMatrix(n);
+            for (int i = 0; i < 4; i++)
+                dataGridViewDa.Rows[0].Cells[i].Value = D[i].ToString("0.###e+00");
         }
+
+        
+
     }
 }

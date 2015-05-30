@@ -105,9 +105,17 @@ namespace MethodOfGraphs {
             return Ralfa;
         }
 
-        public string UploadingCalculationValue(double alfa) {
+        public string[] UploadingCalculationValue(double alfa,int n) {
+            string[] w = new string[5];
             Calculations cal = new Calculations(fileName);
-            string w = Convert.ToString(cal.CriticalValue(alfa));
+            w[0] = Convert.ToString(cal.CriticalValue(alfa).ToString("0.###e+00"));
+            w[1] = Convert.ToString(Math.Sqrt(cal.CalcStandardDeviation2(n)).ToString("0.###e+00"));
+            double[] a = cal.CreateAMatrix(CreationXMatrix(), CreationOfYMatrix());
+            string[] nA = new string[4];
+            for (int i = 0; i < 4; i++)
+                nA[i] = a[i].ToString("0.###e+00");
+            w[2] = "y=" + nA[0] + "+" + nA[1] + "x1+" + nA[2] + "x2+" + nA[3] + "x3";
+
             return w;
         }
 

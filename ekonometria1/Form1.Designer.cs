@@ -49,6 +49,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridViewDa = new System.Windows.Forms.DataGridView();
+            this.D0 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.D1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.D2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.D3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonShowGraph = new System.Windows.Forms.Button();
             this.dataGridViewR = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,23 +67,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.D0 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.D1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.D2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.D3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDataFromFile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewR0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCorrelation)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewR)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -267,7 +267,7 @@
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dataGridViewDa);
             this.panel2.Controls.Add(this.buttonShowGraph);
             this.panel2.Controls.Add(this.dataGridViewR);
             this.panel2.Controls.Add(this.textBoxRalfa);
@@ -277,6 +277,74 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(474, 246);
             this.panel2.TabIndex = 15;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(95, 66);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(0, 13);
+            this.label11.TabIndex = 24;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(189, 42);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "label10";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 42);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(180, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Przeciętny błąd szacunku parametru";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 13);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Równanie modelu:";
+            // 
+            // dataGridViewDa
+            // 
+            this.dataGridViewDa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.D0,
+            this.D1,
+            this.D2,
+            this.D3});
+            this.dataGridViewDa.Location = new System.Drawing.Point(0, 94);
+            this.dataGridViewDa.Name = "dataGridViewDa";
+            this.dataGridViewDa.Size = new System.Drawing.Size(443, 42);
+            this.dataGridViewDa.TabIndex = 18;
+            // 
+            // D0
+            // 
+            this.D0.HeaderText = "D(a0)";
+            this.D0.Name = "D0";
+            // 
+            // D1
+            // 
+            this.D1.HeaderText = "D(a1)";
+            this.D1.Name = "D1";
+            // 
+            // D2
+            // 
+            this.D2.HeaderText = "D(a2)";
+            this.D2.Name = "D2";
+            // 
+            // D3
+            // 
+            this.D3.HeaderText = "D(a3)";
+            this.D3.Name = "D3";
             // 
             // buttonShowGraph
             // 
@@ -365,74 +433,6 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Dane potrzebne do wykonania obliczeń:";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.D0,
-            this.D1,
-            this.D2,
-            this.D3});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 94);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(443, 42);
-            this.dataGridView1.TabIndex = 18;
-            // 
-            // D0
-            // 
-            this.D0.HeaderText = "D(a0)";
-            this.D0.Name = "D0";
-            // 
-            // D1
-            // 
-            this.D1.HeaderText = "D(a1)";
-            this.D1.Name = "D1";
-            // 
-            // D2
-            // 
-            this.D2.HeaderText = "D(a2)";
-            this.D2.Name = "D2";
-            // 
-            // D3
-            // 
-            this.D3.HeaderText = "D(a3)";
-            this.D3.Name = "D3";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 13);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Równanie modelu:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 42);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(180, 13);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Przeciętny błąd szacunku parametru";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(189, 42);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "label10";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(95, 66);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(0, 13);
-            this.label11.TabIndex = 24;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,12 +451,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCorrelation)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewR)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -496,7 +496,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewDa;
         private System.Windows.Forms.DataGridViewTextBoxColumn D0;
         private System.Windows.Forms.DataGridViewTextBoxColumn D1;
         private System.Windows.Forms.DataGridViewTextBoxColumn D2;

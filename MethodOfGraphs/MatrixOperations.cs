@@ -31,9 +31,11 @@ namespace MethodOfGraphs {
             int col = B.GetLength(1);
             double[,] AB = new double[row, col];
             var c = eA.WorksheetFunction.MMult(A, B);
+
             for (int i = 0, m = 1; i < col & m < col + 1; i++, m++)
                 for (int j = 0, n = 1; j < row & n < row + 1; j++, n++)
                     AB[i, j] = c[m, n];
+
             return AB;
         }
 
