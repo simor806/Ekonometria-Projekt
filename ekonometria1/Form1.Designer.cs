@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.textBoxPath = new System.Windows.Forms.TextBox();
             this.buttonLoadData = new System.Windows.Forms.Button();
@@ -43,14 +45,12 @@
             this.colRX1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRX2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRX3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxAlfa = new System.Windows.Forms.TextBox();
-            this.textBoxRalfa = new System.Windows.Forms.TextBox();
+            this.labelAlfa = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.labelRalfa = new System.Windows.Forms.Label();
+            this.labelResult = new System.Windows.Forms.Label();
+            this.labelSa = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewDa = new System.Windows.Forms.DataGridView();
@@ -60,21 +60,29 @@
             this.D3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonShowGraph = new System.Windows.Forms.Button();
             this.dataGridViewR = new System.Windows.Forms.DataGridView();
+            this.comboBoxAlfa = new System.Windows.Forms.ComboBox();
+            this.groupBoxR = new System.Windows.Forms.GroupBox();
+            this.groupBoxDa = new System.Windows.Forms.GroupBox();
+            this.groupBoxH = new System.Windows.Forms.GroupBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.dataGridViewTY = new System.Windows.Forms.DataGridView();
+            this.colTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBoxTY = new System.Windows.Forms.GroupBox();
+            this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDataFromFile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewR0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCorrelation)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewR)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.groupBoxR.SuspendLayout();
+            this.groupBoxDa.SuspendLayout();
+            this.groupBoxH.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTY)).BeginInit();
+            this.groupBoxTY.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -88,19 +96,19 @@
             // 
             // textBoxPath
             // 
-            this.textBoxPath.Location = new System.Drawing.Point(85, 12);
+            this.textBoxPath.Location = new System.Drawing.Point(131, 18);
             this.textBoxPath.Name = "textBoxPath";
             this.textBoxPath.ReadOnly = true;
-            this.textBoxPath.Size = new System.Drawing.Size(330, 20);
+            this.textBoxPath.Size = new System.Drawing.Size(333, 20);
             this.textBoxPath.TabIndex = 0;
             // 
             // buttonLoadData
             // 
-            this.buttonLoadData.Location = new System.Drawing.Point(12, 6);
+            this.buttonLoadData.Location = new System.Drawing.Point(12, 16);
             this.buttonLoadData.Name = "buttonLoadData";
-            this.buttonLoadData.Size = new System.Drawing.Size(67, 36);
+            this.buttonLoadData.Size = new System.Drawing.Size(113, 23);
             this.buttonLoadData.TabIndex = 1;
-            this.buttonLoadData.Text = "Wczytaj dane";
+            this.buttonLoadData.Text = "1. Wczytaj dane";
             this.buttonLoadData.UseVisualStyleBackColor = true;
             this.buttonLoadData.Click += new System.EventHandler(this.BrowseButton_Click);
             // 
@@ -117,9 +125,9 @@
             this.dataGridViewDataFromFile.Location = new System.Drawing.Point(12, 51);
             this.dataGridViewDataFromFile.Name = "dataGridViewDataFromFile";
             this.dataGridViewDataFromFile.ReadOnly = true;
-            this.dataGridViewDataFromFile.RowHeadersVisible = false;
+            this.dataGridViewDataFromFile.RowHeadersWidth = 50;
             this.dataGridViewDataFromFile.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridViewDataFromFile.Size = new System.Drawing.Size(403, 421);
+            this.dataGridViewDataFromFile.Size = new System.Drawing.Size(452, 423);
             this.dataGridViewDataFromFile.TabIndex = 2;
             // 
             // colY
@@ -150,11 +158,12 @@
             // 
             // buttonCalculate
             // 
-            this.buttonCalculate.Location = new System.Drawing.Point(234, 40);
+            this.buttonCalculate.Enabled = false;
+            this.buttonCalculate.Location = new System.Drawing.Point(714, 15);
             this.buttonCalculate.Name = "buttonCalculate";
             this.buttonCalculate.Size = new System.Drawing.Size(75, 23);
             this.buttonCalculate.TabIndex = 3;
-            this.buttonCalculate.Text = "Oblicz";
+            this.buttonCalculate.Text = "3. Oblicz";
             this.buttonCalculate.UseVisualStyleBackColor = true;
             this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
             // 
@@ -165,11 +174,22 @@
             this.dataGridViewR0.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewR0.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colR0});
-            this.dataGridViewR0.Location = new System.Drawing.Point(6, 32);
+            this.dataGridViewR0.Location = new System.Drawing.Point(15, 22);
             this.dataGridViewR0.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridViewR0.Name = "dataGridViewR0";
             this.dataGridViewR0.ReadOnly = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Format = "N3";
+            dataGridViewCellStyle1.NullValue = null;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewR0.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewR0.RowHeadersWidth = 50;
+            this.dataGridViewR0.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewR0.Size = new System.Drawing.Size(153, 95);
             this.dataGridViewR0.TabIndex = 4;
             // 
@@ -178,6 +198,7 @@
             this.colR0.HeaderText = "R0";
             this.colR0.Name = "colR0";
             this.colR0.ReadOnly = true;
+            this.colR0.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewCorrelation
             // 
@@ -189,11 +210,12 @@
             this.colRX1,
             this.colRX2,
             this.colRX3});
-            this.dataGridViewCorrelation.Location = new System.Drawing.Point(170, 32);
+            this.dataGridViewCorrelation.Location = new System.Drawing.Point(178, 22);
             this.dataGridViewCorrelation.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridViewCorrelation.Name = "dataGridViewCorrelation";
             this.dataGridViewCorrelation.ReadOnly = true;
             this.dataGridViewCorrelation.RowHeadersVisible = false;
+            this.dataGridViewCorrelation.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewCorrelation.Size = new System.Drawing.Size(304, 95);
             this.dataGridViewCorrelation.TabIndex = 5;
             // 
@@ -202,6 +224,7 @@
             this.colRX1.HeaderText = "X1";
             this.colRX1.Name = "colRX1";
             this.colRX1.ReadOnly = true;
+            this.colRX1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // colRX2
             // 
@@ -215,103 +238,83 @@
             this.colRX3.Name = "colRX3";
             this.colRX3.ReadOnly = true;
             // 
-            // label1
+            // labelAlfa
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(6, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 15);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Poziom istotności α";
-            // 
-            // textBoxAlfa
-            // 
-            this.textBoxAlfa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxAlfa.Location = new System.Drawing.Point(125, 43);
-            this.textBoxAlfa.Name = "textBoxAlfa";
-            this.textBoxAlfa.Size = new System.Drawing.Size(100, 21);
-            this.textBoxAlfa.TabIndex = 7;
-            this.textBoxAlfa.Text = "0,05";
-            // 
-            // textBoxRalfa
-            // 
-            this.textBoxRalfa.Location = new System.Drawing.Point(220, 11);
-            this.textBoxRalfa.Name = "textBoxRalfa";
-            this.textBoxRalfa.ReadOnly = true;
-            this.textBoxRalfa.Size = new System.Drawing.Size(100, 20);
-            this.textBoxRalfa.TabIndex = 10;
+            this.labelAlfa.AutoSize = true;
+            this.labelAlfa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelAlfa.Location = new System.Drawing.Point(480, 19);
+            this.labelAlfa.Name = "labelAlfa";
+            this.labelAlfa.Size = new System.Drawing.Size(150, 13);
+            this.labelAlfa.TabIndex = 6;
+            this.labelAlfa.Text = "2. Wybierz poziom istotności α";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 11);
+            this.label3.Location = new System.Drawing.Point(0, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(211, 13);
+            this.label3.Size = new System.Drawing.Size(223, 13);
             this.label3.TabIndex = 11;
-            this.label3.Text = "Wartość krytyczna współczynnika korelacji";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(3, 4);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(156, 15);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Współczynniki korelacji";
+            this.label3.Text = "5. Wartość krytyczna współczynnika korelacji";
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.labelRalfa);
+            this.panel2.Controls.Add(this.labelResult);
+            this.panel2.Controls.Add(this.labelSa);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.dataGridViewDa);
-            this.panel2.Controls.Add(this.buttonShowGraph);
-            this.panel2.Controls.Add(this.dataGridViewR);
-            this.panel2.Controls.Add(this.textBoxRalfa);
-            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(418, 226);
+            this.panel2.Location = new System.Drawing.Point(483, 183);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(474, 246);
+            this.panel2.Size = new System.Drawing.Size(496, 77);
             this.panel2.TabIndex = 15;
             // 
-            // label11
+            // labelRalfa
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(95, 66);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(0, 13);
-            this.label11.TabIndex = 24;
+            this.labelRalfa.AutoSize = true;
+            this.labelRalfa.Location = new System.Drawing.Point(232, 10);
+            this.labelRalfa.Name = "labelRalfa";
+            this.labelRalfa.Size = new System.Drawing.Size(10, 13);
+            this.labelRalfa.TabIndex = 25;
+            this.labelRalfa.Text = " ";
             // 
-            // label10
+            // labelResult
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(189, 42);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "label10";
+            this.labelResult.AutoSize = true;
+            this.labelResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelResult.Location = new System.Drawing.Point(113, 56);
+            this.labelResult.Name = "labelResult";
+            this.labelResult.Size = new System.Drawing.Size(11, 13);
+            this.labelResult.TabIndex = 24;
+            this.labelResult.Text = " ";
+            // 
+            // labelSa
+            // 
+            this.labelSa.AutoSize = true;
+            this.labelSa.Location = new System.Drawing.Point(201, 33);
+            this.labelSa.Name = "labelSa";
+            this.labelSa.Size = new System.Drawing.Size(10, 13);
+            this.labelSa.TabIndex = 23;
+            this.labelSa.Text = " ";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 42);
+            this.label8.Location = new System.Drawing.Point(0, 33);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(180, 13);
+            this.label8.Size = new System.Drawing.Size(192, 13);
             this.label8.TabIndex = 21;
-            this.label8.Text = "Przeciętny błąd szacunku parametru";
+            this.label8.Text = "6. Przeciętny błąd szacunku parametru";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 66);
+            this.label2.Location = new System.Drawing.Point(0, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 13);
+            this.label2.Size = new System.Drawing.Size(104, 13);
             this.label2.TabIndex = 19;
-            this.label2.Text = "Równanie modelu:";
+            this.label2.Text = "7. Równanie modelu";
             // 
             // dataGridViewDa
             // 
@@ -321,7 +324,7 @@
             this.D1,
             this.D2,
             this.D3});
-            this.dataGridViewDa.Location = new System.Drawing.Point(0, 94);
+            this.dataGridViewDa.Location = new System.Drawing.Point(15, 22);
             this.dataGridViewDa.Name = "dataGridViewDa";
             this.dataGridViewDa.Size = new System.Drawing.Size(443, 42);
             this.dataGridViewDa.TabIndex = 18;
@@ -348,11 +351,12 @@
             // 
             // buttonShowGraph
             // 
-            this.buttonShowGraph.Location = new System.Drawing.Point(306, 212);
+            this.buttonShowGraph.Enabled = false;
+            this.buttonShowGraph.Location = new System.Drawing.Point(829, 362);
             this.buttonShowGraph.Name = "buttonShowGraph";
             this.buttonShowGraph.Size = new System.Drawing.Size(112, 23);
             this.buttonShowGraph.TabIndex = 17;
-            this.buttonShowGraph.Text = "Wyświetl graf";
+            this.buttonShowGraph.Text = "10. Wyświetl graf";
             this.buttonShowGraph.UseVisualStyleBackColor = true;
             this.buttonShowGraph.Click += new System.EventHandler(this.buttonShowGraph_Click);
             // 
@@ -366,7 +370,7 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
-            this.dataGridViewR.Location = new System.Drawing.Point(0, 156);
+            this.dataGridViewR.Location = new System.Drawing.Point(15, 22);
             this.dataGridViewR.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridViewR.Name = "dataGridViewR";
             this.dataGridViewR.ReadOnly = true;
@@ -374,74 +378,125 @@
             this.dataGridViewR.Size = new System.Drawing.Size(303, 90);
             this.dataGridViewR.TabIndex = 16;
             // 
+            // comboBoxAlfa
+            // 
+            this.comboBoxAlfa.FormattingEnabled = true;
+            this.comboBoxAlfa.Items.AddRange(new object[] {
+            "0,01",
+            "0,02",
+            "0,03",
+            "0,04",
+            "0,05",
+            "0,06",
+            "0,07",
+            "0,08",
+            "0,09",
+            "0,10"});
+            this.comboBoxAlfa.Location = new System.Drawing.Point(636, 16);
+            this.comboBoxAlfa.Name = "comboBoxAlfa";
+            this.comboBoxAlfa.Size = new System.Drawing.Size(51, 21);
+            this.comboBoxAlfa.TabIndex = 9;
+            this.comboBoxAlfa.Text = "0,05";
+            // 
+            // groupBoxR
+            // 
+            this.groupBoxR.Controls.Add(this.dataGridViewR0);
+            this.groupBoxR.Controls.Add(this.dataGridViewCorrelation);
+            this.groupBoxR.Location = new System.Drawing.Point(483, 51);
+            this.groupBoxR.Name = "groupBoxR";
+            this.groupBoxR.Size = new System.Drawing.Size(496, 126);
+            this.groupBoxR.TabIndex = 26;
+            this.groupBoxR.TabStop = false;
+            this.groupBoxR.Text = "4. Współczynniki korelacji";
+            // 
+            // groupBoxDa
+            // 
+            this.groupBoxDa.Controls.Add(this.dataGridViewDa);
+            this.groupBoxDa.Location = new System.Drawing.Point(483, 269);
+            this.groupBoxDa.Name = "groupBoxDa";
+            this.groupBoxDa.Size = new System.Drawing.Size(473, 75);
+            this.groupBoxDa.TabIndex = 27;
+            this.groupBoxDa.TabStop = false;
+            this.groupBoxDa.Text = "8. Błędy średnie szacunku parametrów";
+            // 
+            // groupBoxH
+            // 
+            this.groupBoxH.Controls.Add(this.dataGridViewR);
+            this.groupBoxH.Location = new System.Drawing.Point(483, 362);
+            this.groupBoxH.Name = "groupBoxH";
+            this.groupBoxH.Size = new System.Drawing.Size(334, 117);
+            this.groupBoxH.TabIndex = 28;
+            this.groupBoxH.TabStop = false;
+            this.groupBoxH.Text = "9. Weryfikacja hipotezy o nieistotności współczynników korelacji";
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "X1";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.HeaderText = "X2";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "X3";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // label5
+            // dataGridViewTY
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(-3, 139);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(452, 17);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Weryfikacja hipotezy o nieistotności współczynników korelacji";
+            this.dataGridViewTY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTY.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colTY});
+            this.dataGridViewTY.Location = new System.Drawing.Point(15, 22);
+            this.dataGridViewTY.Name = "dataGridViewTY";
+            this.dataGridViewTY.RowHeadersWidth = 50;
+            this.dataGridViewTY.Size = new System.Drawing.Size(153, 433);
+            this.dataGridViewTY.TabIndex = 29;
             // 
-            // panel1
+            // colTY
             // 
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.dataGridViewR0);
-            this.panel1.Controls.Add(this.dataGridViewCorrelation);
-            this.panel1.Location = new System.Drawing.Point(418, 81);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(477, 139);
-            this.panel1.TabIndex = 16;
+            this.colTY.HeaderText = "Y\'";
+            this.colTY.Name = "colTY";
+            this.colTY.ReadOnly = true;
+            this.colTY.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // panel3
+            // groupBoxTY
             // 
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.textBoxAlfa);
-            this.panel3.Controls.Add(this.buttonCalculate);
-            this.panel3.Location = new System.Drawing.Point(418, 8);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(473, 67);
-            this.panel3.TabIndex = 17;
+            this.groupBoxTY.Controls.Add(this.dataGridViewTY);
+            this.groupBoxTY.Location = new System.Drawing.Point(993, 19);
+            this.groupBoxTY.Name = "groupBoxTY";
+            this.groupBoxTY.Size = new System.Drawing.Size(183, 460);
+            this.groupBoxTY.TabIndex = 30;
+            this.groupBoxTY.TabStop = false;
+            this.groupBoxTY.Text = "11. Wartości wyliczone";
             // 
-            // label6
+            // form1BindingSource
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(6, 8);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(297, 17);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Dane potrzebne do wykonania obliczeń:";
+            this.form1BindingSource.DataSource = typeof(ekonometria1.Form1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 473);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1188, 487);
+            this.Controls.Add(this.groupBoxTY);
+            this.Controls.Add(this.groupBoxH);
+            this.Controls.Add(this.groupBoxDa);
+            this.Controls.Add(this.comboBoxAlfa);
+            this.Controls.Add(this.buttonCalculate);
+            this.Controls.Add(this.groupBoxR);
+            this.Controls.Add(this.labelAlfa);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridViewDataFromFile);
+            this.Controls.Add(this.buttonShowGraph);
             this.Controls.Add(this.buttonLoadData);
             this.Controls.Add(this.textBoxPath);
             this.Name = "Form1";
@@ -453,10 +508,12 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewR)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.groupBoxR.ResumeLayout(false);
+            this.groupBoxDa.ResumeLayout(false);
+            this.groupBoxH.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTY)).EndInit();
+            this.groupBoxTY.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -470,30 +527,16 @@
         private System.Windows.Forms.DataGridView dataGridViewDataFromFile;
         private System.Windows.Forms.Button buttonCalculate;
         private System.Windows.Forms.DataGridView dataGridViewR0;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colR0;
         private System.Windows.Forms.DataGridView dataGridViewCorrelation;
         private System.Windows.Forms.DataGridViewTextBoxColumn colY;
         private System.Windows.Forms.DataGridViewTextBoxColumn colX1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colX2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colX3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRX1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRX2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRX3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxAlfa;
-        private System.Windows.Forms.TextBox textBoxRalfa;
+        private System.Windows.Forms.Label labelAlfa;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonShowGraph;
         private System.Windows.Forms.DataGridView dataGridViewR;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridViewDa;
@@ -501,15 +544,24 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn D1;
         private System.Windows.Forms.DataGridViewTextBoxColumn D2;
         private System.Windows.Forms.DataGridViewTextBoxColumn D3;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-
-        //klasy z Excela
-        //private static Excel.Workbook MyBook = null;
-        //private static Excel.Application MyApp = null;
-        //private static Excel.Worksheet MySheet = null;
-
-
+        private System.Windows.Forms.Label labelResult;
+        private System.Windows.Forms.Label labelSa;
+        private System.Windows.Forms.ComboBox comboBoxAlfa;
+        private System.Windows.Forms.BindingSource form1BindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colR0;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRX1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRX2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRX3;
+        private System.Windows.Forms.Label labelRalfa;
+        private System.Windows.Forms.GroupBox groupBoxR;
+        private System.Windows.Forms.GroupBox groupBoxDa;
+        private System.Windows.Forms.GroupBox groupBoxH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridView dataGridViewTY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTY;
+        private System.Windows.Forms.GroupBox groupBoxTY;
     }
 }
 

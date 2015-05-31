@@ -24,3 +24,14 @@ C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\ekonometr
 C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\ekonometria1\obj\Debug\ekonometria1.csproj.GenerateResource.Cache
 C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\ekonometria1\obj\Debug\ekonometria1.exe
 C:\Users\ula\Desktop\Studia\Semestr I -IIstopnień\ekonometria\Projekt\ekonometria1\obj\Debug\ekonometria1.pdb
+C:\Users\Szymon\Documents\Visual Studio 2013\Projects\ekonometria2\ekonometria1\bin\Debug\ekonometria1.exe.config
+C:\Users\Szymon\Documents\Visual Studio 2013\Projects\ekonometria2\ekonometria1\bin\Debug\ekonometria1.exe
+C:\Users\Szymon\Documents\Visual Studio 2013\Projects\ekonometria2\ekonometria1\bin\Debug\ekonometria1.pdb
+C:\Users\Szymon\Documents\Visual Studio 2013\Projects\ekonometria2\ekonometria1\bin\Debug\MethodOfGraphs.dll
+C:\Users\Szymon\Documents\Visual Studio 2013\Projects\ekonometria2\ekonometria1\bin\Debug\MethodOfGraphs.pdb
+C:\Users\Szymon\Documents\Visual Studio 2013\Projects\ekonometria2\ekonometria1\obj\Debug\ekonometria1.csprojResolveAssemblyReference.cache
+C:\Users\Szymon\Documents\Visual Studio 2013\Projects\ekonometria2\ekonometria1\obj\Debug\ekonometria1.Form1.resources
+C:\Users\Szymon\Documents\Visual Studio 2013\Projects\ekonometria2\ekonometria1\obj\Debug\ekonometria1.Properties.Resources.resources
+C:\Users\Szymon\Documents\Visual Studio 2013\Projects\ekonometria2\ekonometria1\obj\Debug\ekonometria1.csproj.GenerateResource.Cache
+C:\Users\Szymon\Documents\Visual Studio 2013\Projects\ekonometria2\ekonometria1\obj\Debug\ekonometria1.exe
+C:\Users\Szymon\Documents\Visual Studio 2013\Projects\ekonometria2\ekonometria1\obj\Debug\ekonometria1.pdb
